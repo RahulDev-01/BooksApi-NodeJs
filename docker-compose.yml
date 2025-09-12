@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  drizzle-postgres:
+    image: postgres:17.4
+    environment:
+      POSTGRES_DB: book-store
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5433:5432"
+    networks:
+      - drizzle-network
+
+networks:
+  drizzle-network:
+    driver: bridge
+
+
+#docker compose up -d
+#docker compose down
+
+
+# After Writing this oprn terminal and write 
+# To start : docker compose up -d 
+# To stop  : docker compose down
